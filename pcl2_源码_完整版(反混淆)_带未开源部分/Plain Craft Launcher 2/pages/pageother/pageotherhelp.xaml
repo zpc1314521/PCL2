@@ -1,0 +1,63 @@
+<AdornerDecorator
+	x:Class="PCL.PageOtherHelp" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:PCL" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+	<Grid>
+		<!--未知连接 ID：1-->
+		<local:MyScrollViewer
+			Name="PanBack"
+			VerticalScrollBarVisibility="Auto"
+			Opacity="0"
+			Visibility="Collapsed"
+			HorizontalScrollBarVisibility="Disabled">
+			<!--未知连接 ID：2-->
+			<StackPanel
+				Name="PanMain"
+				Margin="25,25,25,10"
+				Grid.IsSharedSizeScope="True">
+				<!--未知连接 ID：3-->
+				<local:MySearchBox
+					Name="SearchBox"
+					Margin="0,0,0,15"
+					HintText="搜索帮助" />
+				<Grid>
+					<!--未知连接 ID：4-->
+					<local:MyCard
+						Name="PanSearch"
+						Visibility="Collapsed"
+						VerticalAlignment="Top"
+						Opacity="0"
+						Margin="0,0,0,15"
+						Title=" "
+						MinHeight="40">
+						<!--未知连接 ID：5-->
+						<StackPanel
+							Name="PanSearchList"
+							Margin="20,40,18,18"
+							VerticalAlignment="Top" />
+					</local:MyCard>
+					<!--未知连接 ID：6-->
+					<StackPanel
+						Name="PanList" />
+				</Grid>
+			</StackPanel>
+		</local:MyScrollViewer>
+		<!--未知连接 ID：7-->
+		<local:MyCard
+			Name="PanLoad"
+			Visibility="Collapsed"
+			Opacity="0"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Margin="40,0"
+			LoadAnimation="False"
+			SnapsToDevicePixels="True"
+			UseAnimation="False">
+			<!--未知连接 ID：8-->
+			<local:MyLoading
+				Name="Load"
+				Text="正在加载帮助列表"
+				Margin="20,20,20,17"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center" />
+		</local:MyCard>
+	</Grid>
+</AdornerDecorator>

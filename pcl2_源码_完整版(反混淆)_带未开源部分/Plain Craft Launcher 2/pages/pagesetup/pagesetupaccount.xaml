@@ -1,0 +1,29 @@
+<AdornerDecorator
+	x:Class="PCL.PageSetupAccount" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:PCL" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+	<!--未知连接 ID：1-->
+	<local:MyScrollViewer
+		Name="PanBack"
+		VerticalScrollBarVisibility="Auto"
+		HorizontalScrollBarVisibility="Disabled">
+		<!--未知连接 ID：2-->
+		<StackPanel
+			Name="PanMain"
+			Margin="25,10">
+			<local:MyCard
+				Margin="0,15"
+				Title="账户管理">
+				<StackPanel
+					Margin="25,37,25,12">
+					<TextBlock
+						Text="在正版强制迁移至微软账户后，本页面将用于对各种账号进行管理。"
+						TextWrapping="Wrap"
+						Margin="0,0,0,3" />
+					<TextBlock
+						Text="由于强制迁移暂未开始，目前本页面暂时留空，请等待 PCL2 的后续更新……"
+						TextWrapping="Wrap"
+						Margin="0,0,0,3" />
+				</StackPanel>
+			</local:MyCard>
+		</StackPanel>
+	</local:MyScrollViewer>
+</AdornerDecorator>

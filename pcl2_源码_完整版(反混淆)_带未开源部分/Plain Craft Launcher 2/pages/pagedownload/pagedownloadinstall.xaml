@@ -1,0 +1,532 @@
+<AdornerDecorator
+	x:Class="PCL.PageDownloadInstall" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:PCL" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+	<Grid>
+		<!--未知连接 ID：1-->
+		<local:MyScrollViewer
+			Name="PanBack"
+			Opacity="0"
+			VerticalScrollBarVisibility="Auto"
+			HorizontalScrollBarVisibility="Disabled"
+			Visibility="Collapsed">
+			<Grid
+				Margin="25,10,25,25">
+				<!--未知连接 ID：2-->
+				<VirtualizingStackPanel
+					Name="PanMinecraft"
+					Grid.Row="1"
+					IsVirtualizing="True"
+					VirtualizationMode="Recycling"
+					Grid.IsSharedSizeScope="True">
+					<UIElement.RenderTransform>
+						<TranslateTransform />
+					</UIElement.RenderTransform>
+				</VirtualizingStackPanel>
+				<!--未知连接 ID：3-->
+				<StackPanel
+					Name="PanSelect"
+					Grid.Row="1"
+					Visibility="Collapsed"
+					Opacity="0"
+					IsHitTestVisible="False">
+					<UIElement.RenderTransform>
+						<TranslateTransform
+							X="40" />
+					</UIElement.RenderTransform>
+					<local:MyCard
+						Title="安装预览"
+						Margin="0,15,0,0"
+						LoadAnimation="False"
+						UseAnimation="False">
+						<StackPanel
+							Margin="25,37,25,15">
+							<!--未知连接 ID：4-->
+							<local:MyHint
+								Name="HintFabricAPI"
+								Text="你尚未选择安装 Fabric API，这会导致大多数 Mod 无法使用！"
+								Margin="0,1,0,7" />
+							<Grid
+								Margin="0,0,0,11">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										Width="1*" />
+									<ColumnDefinition
+										Width="Auto" />
+								</Grid.ColumnDefinitions>
+								<!--未知连接 ID：5-->
+								<local:MyListItem
+									Name="ItemSelect"
+									Column="0"
+									IsHitTestVisible="False"
+									Margin="-7,0,0,0"
+									Height="42"
+									PaddingRight="15"
+									SnapsToDevicePixels="True"
+									Type="None" />
+								<!--未知连接 ID：6-->
+								<local:MyButton
+									Name="BtnSelectStart"
+									Grid.Column="1"
+									HorizontalAlignment="Right"
+									ColorType="Highlight"
+									Text="开始安装"
+									Margin="0,2,0,0"
+									MinWidth="140"
+									Padding="13,0"
+									Height="35"
+									VerticalAlignment="Center" />
+							</Grid>
+							<Grid
+								Margin="0,0,0,5">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										Width="Auto"
+										SharedSizeGroup="Name" />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+								<TextBlock
+									VerticalAlignment="Top"
+									HorizontalAlignment="Left"
+									Text="版本名称"
+									Margin="0,5,25,0" />
+								<!--未知连接 ID：7-->
+								<local:MyTextBox
+									Name="TextSelectName"
+									Grid.Column="1"
+									MinHeight="28" />
+							</Grid>
+						</StackPanel>
+					</local:MyCard>
+					<!--未知连接 ID：8-->
+					<local:MyCard
+						Name="CardMinecraft"
+						Title="Minecraft"
+						Height="40"
+						Margin="0,15,0,0"
+						IsSwaped="True"
+						CanSwap="True"
+						SwapLogoRight="True">
+						<FrameworkElement
+							Tag="用于折叠" />
+						<!--未知连接 ID：9-->
+						<Grid
+							Name="PanMinecraftInfo"
+							Height="18"
+							Margin="175,11,15,0"
+							VerticalAlignment="Top">
+							<UIElement.RenderTransform>
+								<TranslateTransform />
+							</UIElement.RenderTransform>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：10-->
+							<Image
+								Name="ImgMinecraft"
+								Margin="0,0,7,0"
+								SnapsToDevicePixels="True"
+								Height="18"
+								RenderOptions.BitmapScalingMode="Linear" />
+							<!--未知连接 ID：11-->
+							<TextBlock
+								Name="LabMinecraft"
+								VerticalAlignment="Center"
+								TextTrimming="CharacterEllipsis"
+								Grid.Column="1" />
+						</Grid>
+					</local:MyCard>
+					<!--未知连接 ID：12-->
+					<local:MyCard
+						Name="CardOptiFine"
+						Title="OptiFine"
+						Height="40"
+						Margin="0,15,0,0"
+						IsSwaped="True"
+						CanSwap="True"
+						SwapLogoRight="True">
+						<StackPanel
+							Margin="20,40,18,15"
+							VerticalAlignment="Top">
+							<!--未知连接 ID：13-->
+							<local:MyHint
+								Name="HintOptiFine"
+								Text="OptiFine 与 Fabric 默认并不兼容，你必须在安装后下载 OptiFabric Mod 解决兼容性问题！"
+								Margin="0,0,0,5" />
+							<!--未知连接 ID：14-->
+							<StackPanel
+								Name="PanOptiFine" />
+						</StackPanel>
+						<!--未知连接 ID：15-->
+						<Grid
+							Name="PanOptiFineInfo"
+							Height="18"
+							Margin="175,11,15,0"
+							VerticalAlignment="Top"
+							Tag="True">
+							<UIElement.RenderTransform>
+								<TranslateTransform />
+							</UIElement.RenderTransform>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：16-->
+							<Image
+								Name="ImgOptiFine"
+								Margin="0,0,7,0"
+								SnapsToDevicePixels="True"
+								Height="18"
+								RenderOptions.BitmapScalingMode="Linear"
+								Source="pack://application:,,,/images/Blocks/GrassPath.png" />
+							<!--未知连接 ID：17-->
+							<TextBlock
+								Name="LabOptiFine"
+								VerticalAlignment="Center"
+								TextTrimming="CharacterEllipsis"
+								Grid.Column="1" />
+						</Grid>
+						<!--未知连接 ID：18-->
+						<Grid
+							Name="BtnOptiFineClear"
+							Height="30"
+							Width="30"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Margin="0,5,32,0"
+							Background="{StaticResource ColorBrushSemiTransparent}">
+							<!--未知连接 ID：19-->
+							<Path
+								Name="BtnOptiFineClearInner"
+								Height="10"
+								Width="10"
+								Stretch="Uniform"
+								Fill="{StaticResource ColorBrushGray1}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Data="F1 M2,0 L0,2 L8,10 L0,18 L2,20 L10,12 L18,20 L20,18 L12,10 L20,2 L18,0 L10,8 L2,0" />
+						</Grid>
+					</local:MyCard>
+					<!--未知连接 ID：20-->
+					<local:MyCard
+						Name="CardForge"
+						Title="Forge"
+						Height="40"
+						Margin="0,15,0,0"
+						IsSwaped="True"
+						CanSwap="True"
+						SwapLogoRight="True">
+						<!--未知连接 ID：21-->
+						<StackPanel
+							Name="PanForge"
+							Margin="20,40,18,15"
+							VerticalAlignment="Top" />
+						<!--未知连接 ID：22-->
+						<Grid
+							Name="PanForgeInfo"
+							Height="18"
+							Margin="175,11,15,0"
+							VerticalAlignment="Top"
+							Tag="True">
+							<UIElement.RenderTransform>
+								<TranslateTransform />
+							</UIElement.RenderTransform>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：23-->
+							<Image
+								Name="ImgForge"
+								Margin="0,0,7,0"
+								SnapsToDevicePixels="True"
+								Height="18"
+								RenderOptions.BitmapScalingMode="Linear"
+								Source="pack://application:,,,/images/Blocks/Anvil.png" />
+							<!--未知连接 ID：24-->
+							<TextBlock
+								Name="LabForge"
+								VerticalAlignment="Center"
+								TextTrimming="CharacterEllipsis"
+								Grid.Column="1" />
+						</Grid>
+						<!--未知连接 ID：25-->
+						<Grid
+							Name="BtnForgeClear"
+							Height="30"
+							Width="30"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Margin="0,5,32,0"
+							Background="{StaticResource ColorBrushSemiTransparent}">
+							<!--未知连接 ID：26-->
+							<Path
+								Name="BtnForgeClearInner"
+								Height="10"
+								Width="10"
+								Stretch="Uniform"
+								Fill="{StaticResource ColorBrushGray1}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Data="F1 M2,0 L0,2 L8,10 L0,18 L2,20 L10,12 L18,20 L20,18 L12,10 L20,2 L18,0 L10,8 L2,0" />
+						</Grid>
+					</local:MyCard>
+					<!--未知连接 ID：27-->
+					<local:MyCard
+						Name="CardFabric"
+						Title="Fabric"
+						Height="40"
+						Margin="0,15,0,0"
+						IsSwaped="True"
+						CanSwap="True"
+						SwapLogoRight="True">
+						<StackPanel
+							Margin="20,40,18,15"
+							VerticalAlignment="Top">
+							<!--未知连接 ID：28-->
+							<local:MyHint
+								Name="HintFabric"
+								Text="Fabric 与 OptiFine 默认并不兼容，你必须在安装后下载 OptiFabric Mod 解决兼容性问题！"
+								Margin="0,0,0,5" />
+							<!--未知连接 ID：29-->
+							<StackPanel
+								Name="PanFabric" />
+						</StackPanel>
+						<!--未知连接 ID：30-->
+						<Grid
+							Name="PanFabricInfo"
+							Height="18"
+							Margin="175,11,15,0"
+							VerticalAlignment="Top"
+							Tag="True">
+							<UIElement.RenderTransform>
+								<TranslateTransform />
+							</UIElement.RenderTransform>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：31-->
+							<Image
+								Name="ImgFabric"
+								Margin="0,0,7,0"
+								SnapsToDevicePixels="True"
+								Height="18"
+								RenderOptions.BitmapScalingMode="Linear"
+								Source="pack://application:,,,/images/Blocks/Fabric.png" />
+							<!--未知连接 ID：32-->
+							<TextBlock
+								Name="LabFabric"
+								VerticalAlignment="Center"
+								TextTrimming="CharacterEllipsis"
+								Grid.Column="1" />
+						</Grid>
+						<!--未知连接 ID：33-->
+						<Grid
+							Name="BtnFabricClear"
+							Height="30"
+							Width="30"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Margin="0,5,32,0"
+							Background="{StaticResource ColorBrushSemiTransparent}">
+							<!--未知连接 ID：34-->
+							<Path
+								Name="BtnFabricClearInner"
+								Height="10"
+								Width="10"
+								Stretch="Uniform"
+								Fill="{StaticResource ColorBrushGray1}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Data="F1 M2,0 L0,2 L8,10 L0,18 L2,20 L10,12 L18,20 L20,18 L12,10 L20,2 L18,0 L10,8 L2,0" />
+						</Grid>
+					</local:MyCard>
+					<!--未知连接 ID：35-->
+					<local:MyCard
+						Name="CardFabricApi"
+						Title="Fabric API"
+						Height="40"
+						Margin="0,15,0,0"
+						IsSwaped="True"
+						CanSwap="True"
+						SwapLogoRight="True">
+						<!--未知连接 ID：36-->
+						<StackPanel
+							Name="PanFabricApi"
+							Margin="20,40,18,15"
+							VerticalAlignment="Top" />
+						<!--未知连接 ID：37-->
+						<Grid
+							Name="PanFabricApiInfo"
+							Height="18"
+							Margin="175,11,15,0"
+							VerticalAlignment="Top"
+							Tag="True">
+							<UIElement.RenderTransform>
+								<TranslateTransform />
+							</UIElement.RenderTransform>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：38-->
+							<Image
+								Name="ImgFabricApi"
+								Margin="0,0,7,0"
+								SnapsToDevicePixels="True"
+								Height="18"
+								RenderOptions.BitmapScalingMode="Linear"
+								Source="pack://application:,,,/images/Blocks/Fabric.png" />
+							<!--未知连接 ID：39-->
+							<TextBlock
+								Name="LabFabricApi"
+								VerticalAlignment="Center"
+								TextTrimming="CharacterEllipsis"
+								Grid.Column="1" />
+						</Grid>
+						<!--未知连接 ID：40-->
+						<Grid
+							Name="BtnFabricApiClear"
+							Height="30"
+							Width="30"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Margin="0,5,32,0"
+							Background="{StaticResource ColorBrushSemiTransparent}">
+							<!--未知连接 ID：41-->
+							<Path
+								Name="BtnFabricApiClearInner"
+								Height="10"
+								Width="10"
+								Stretch="Uniform"
+								Fill="{StaticResource ColorBrushGray1}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Data="F1 M2,0 L0,2 L8,10 L0,18 L2,20 L10,12 L18,20 L20,18 L12,10 L20,2 L18,0 L10,8 L2,0" />
+						</Grid>
+					</local:MyCard>
+					<!--未知连接 ID：42-->
+					<local:MyCard
+						Name="CardLiteLoader"
+						Title="LiteLoader"
+						Height="40"
+						Margin="0,15,0,0"
+						IsSwaped="True"
+						CanSwap="True"
+						SwapLogoRight="True">
+						<!--未知连接 ID：43-->
+						<StackPanel
+							Name="PanLiteLoader"
+							Margin="20,40,18,15"
+							VerticalAlignment="Top" />
+						<!--未知连接 ID：44-->
+						<Grid
+							Name="PanLiteLoaderInfo"
+							Height="18"
+							Margin="175,11,15,0"
+							VerticalAlignment="Top"
+							Tag="True">
+							<UIElement.RenderTransform>
+								<TranslateTransform />
+							</UIElement.RenderTransform>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：45-->
+							<Image
+								Name="ImgLiteLoader"
+								Margin="-1,0,6,0"
+								SnapsToDevicePixels="True"
+								Height="20"
+								RenderOptions.BitmapScalingMode="Linear"
+								Source="pack://application:,,,/images/Blocks/Egg.png" />
+							<!--未知连接 ID：46-->
+							<TextBlock
+								Name="LabLiteLoader"
+								VerticalAlignment="Center"
+								TextTrimming="CharacterEllipsis"
+								Grid.Column="1" />
+						</Grid>
+						<!--未知连接 ID：47-->
+						<Grid
+							Name="BtnLiteLoaderClear"
+							Height="30"
+							Width="30"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Margin="0,5,32,0"
+							Background="{StaticResource ColorBrushSemiTransparent}">
+							<!--未知连接 ID：48-->
+							<Path
+								Name="BtnLiteLoaderClearInner"
+								Height="10"
+								Width="10"
+								Stretch="Uniform"
+								Fill="{StaticResource ColorBrushGray1}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Data="F1 M2,0 L0,2 L8,10 L0,18 L2,20 L10,12 L18,20 L20,18 L12,10 L20,2 L18,0 L10,8 L2,0" />
+						</Grid>
+					</local:MyCard>
+				</StackPanel>
+			</Grid>
+		</local:MyScrollViewer>
+		<!--未知连接 ID：49-->
+		<local:MyCard
+			Name="PanLoad"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Margin="40,0"
+			LoadAnimation="False"
+			SnapsToDevicePixels="True"
+			UseAnimation="False"
+			Opacity="0"
+			Visibility="Collapsed">
+			<!--未知连接 ID：50-->
+			<local:MyLoading
+				Name="LoadMinecraft"
+				Text="正在获取版本列表"
+				Margin="20,20,20,17"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center" />
+			<!--未知连接 ID：51-->
+			<local:MyLoading
+				Name="LoadOptiFine"
+				Visibility="Collapsed"
+				HasAnimation="False" />
+			<!--未知连接 ID：52-->
+			<local:MyLoading
+				Name="LoadForge"
+				Visibility="Collapsed"
+				HasAnimation="False" />
+			<!--未知连接 ID：53-->
+			<local:MyLoading
+				Name="LoadLiteLoader"
+				Visibility="Collapsed"
+				HasAnimation="False" />
+			<!--未知连接 ID：54-->
+			<local:MyLoading
+				Name="LoadFabric"
+				Visibility="Collapsed"
+				HasAnimation="False" />
+			<!--未知连接 ID：55-->
+			<local:MyLoading
+				Name="LoadFabricApi"
+				Visibility="Collapsed"
+				HasAnimation="False" />
+		</local:MyCard>
+	</Grid>
+</AdornerDecorator>

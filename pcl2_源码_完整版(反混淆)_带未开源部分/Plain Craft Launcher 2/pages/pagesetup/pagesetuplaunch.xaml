@@ -1,0 +1,734 @@
+<AdornerDecorator
+	x:Class="PCL.PageSetupLaunch" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:PCL" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:System="clr-namespace:System;assembly=mscorlib">
+	<!--未知连接 ID：1-->
+	<local:MyScrollViewer
+		Name="PanBack"
+		VerticalScrollBarVisibility="Auto"
+		HorizontalScrollBarVisibility="Disabled">
+		<!--未知连接 ID：2-->
+		<StackPanel
+			Name="PanMain"
+			Margin="25,10">
+			<!--未知连接 ID：3-->
+			<local:MyCard
+				Name="CardSkin"
+				Margin="0,15"
+				Title="离线皮肤">
+				<StackPanel
+					Margin="25,40,25,15">
+					<Grid
+						Margin="-1,0,0,0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<!--未知连接 ID：4-->
+						<local:MyRadioBox
+							Name="RadioSkinType0"
+							Text="随机"
+							Height="22"
+							Tag="LaunchSkinType/0"
+							Column="0"
+							ToolTipService.ShowDuration="2333333"
+							ToolTipService.Placement="Bottom"
+							ToolTip="在 Steve 和 Alex 中随机选择一个皮肤" />
+						<!--未知连接 ID：5-->
+						<local:MyRadioBox
+							Name="RadioSkinType1"
+							Text="Steve"
+							Height="22"
+							Tag="LaunchSkinType/1"
+							Column="1" />
+						<!--未知连接 ID：6-->
+						<local:MyRadioBox
+							Name="RadioSkinType2"
+							Text="Alex"
+							Height="22"
+							Tag="LaunchSkinType/2"
+							Column="2" />
+						<!--未知连接 ID：7-->
+						<local:MyRadioBox
+							Name="RadioSkinType3"
+							Text="正版皮肤"
+							Height="22"
+							Tag="LaunchSkinType/3"
+							Column="3"
+							ToolTipService.ShowDuration="2333333"
+							ToolTipService.Placement="Bottom"
+							ToolTip="使用某个正版玩家的皮肤" />
+						<!--未知连接 ID：8-->
+						<local:MyRadioBox
+							Name="RadioSkinType4"
+							Text="自定义"
+							Height="22"
+							Tag="LaunchSkinType/4"
+							Column="4"
+							ToolTipService.ShowDuration="2333333"
+							ToolTipService.Placement="Bottom"
+							ToolTip="以资源包的形式加载自定义皮肤。&#xA;使用此方式更换的皮肤在多人游戏中仅自己可见，且会替换游戏中所有的角色。" />
+					</Grid>
+					<!--未知连接 ID：9-->
+					<Grid
+						Name="PanSkinID"
+						Margin="0,14,0,2"
+						Visibility="Collapsed">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="Auto"
+								SharedSizeGroup="Name" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="Auto" />
+							<RowDefinition
+								Height="Auto" />
+						</Grid.RowDefinitions>
+						<TextBlock
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							Text="正版玩家名"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：10-->
+						<local:MyTextBox
+							Name="TextSkinID"
+							Tag="LaunchSkinID"
+							Grid.Column="1"
+							MaxLength="50" />
+						<Grid
+							Height="35"
+							Row="1"
+							ColumnSpan="2"
+							Margin="0,14,0,0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto"
+									SharedSizeGroup="Button" />
+								<ColumnDefinition
+									Width="Auto"
+									SharedSizeGroup="Button" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：11-->
+							<local:MyButton
+								Name="BtnSkinSave"
+								Text="保存皮肤"
+								MinWidth="140"
+								Padding="13,0"
+								Margin="0,0,20,0"
+								Grid.Row="1" />
+							<!--未知连接 ID：12-->
+							<local:MyButton
+								Name="BtnSkinCache"
+								Text="刷新缓存"
+								MinWidth="140"
+								Padding="13,0"
+								Margin="0,0,20,0"
+								ToolTip="刷新并重新下载 PCL 当前显示的皮肤"
+								ToolTipService.ShowDuration="2333333"
+								Grid.Row="1"
+								Grid.Column="1" />
+						</Grid>
+					</Grid>
+					<!--未知连接 ID：13-->
+					<Grid
+						Name="PanSkinChange"
+						Margin="0,14,0,2"
+						Height="35"
+						Visibility="Collapsed">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="Auto"
+								SharedSizeGroup="Button" />
+							<ColumnDefinition
+								Width="Auto"
+								SharedSizeGroup="Button" />
+						</Grid.ColumnDefinitions>
+						<!--未知连接 ID：14-->
+						<local:MyButton
+							Name="BtnSkinChange"
+							Text="更改皮肤"
+							MinWidth="140"
+							Padding="13,0"
+							Margin="0,0,20,0" />
+						<!--未知连接 ID：15-->
+						<local:MyButton
+							Name="BtnSkinDelete"
+							Text="重置皮肤"
+							MinWidth="140"
+							Padding="13,0"
+							Margin="0,0,20,0"
+							ColorType="Red"
+							Grid.Column="1" />
+					</Grid>
+				</StackPanel>
+			</local:MyCard>
+			<!--未知连接 ID：16-->
+			<local:MyCard
+				Name="CardArgument"
+				Margin="0,0,0,15"
+				Title="启动选项">
+				<StackPanel
+					Margin="25,40,25,15">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="Auto"
+								SharedSizeGroup="Name" />
+							<ColumnDefinition
+								Width="1*" />
+							<ColumnDefinition
+								Width="60" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="Auto" />
+						</Grid.RowDefinitions>
+						<TextBlock
+							Grid.Row="0"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							Text="游戏窗口标题"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：17-->
+						<local:MyTextBox
+							Name="TextArgumentTitle"
+							Grid.Row="0"
+							Grid.ColumnSpan="2"
+							Tag="LaunchArgumentTitle"
+							Grid.Column="1"
+							ToolTip="自定义游戏窗口的标题，若留空则不进行更改。&#xA;支持以下替换标记：&#xA; - {user}：玩家名字&#xA; - {login}：玩家的登录方式&#xA; - {name}：游戏版本名&#xA; - {time}：当前的系统时间&#xA; - {version}：游戏对应的原版版本号&#xA; - {path}：PCL 可执行文件所在路径，以 \ 结尾"
+							ToolTipService.ShowDuration="2333333"
+							HintText="默认"
+							MaxLength="100" />
+						<TextBlock
+							Grid.Row="2"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							Text="自定义信息"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：18-->
+						<local:MyTextBox
+							Name="TextArgumentInfo"
+							Grid.Row="2"
+							Grid.ColumnSpan="2"
+							Tag="LaunchArgumentInfo"
+							Text="Plain Craft Launcher 2"
+							Grid.Column="1"
+							ToolTip="该信息会显示在游戏主界面的左下角，与 F3 调试页面的左上角"
+							ToolTipService.ShowDuration="2333333">
+							<local:MyTextBox.ValidateRules>
+								<local:ValidateExcept>
+									<local:ValidateExcept.Excepts>
+										<System:String>"</System:String>
+										<System:String>“</System:String>
+										<System:String>”</System:String>
+									</local:ValidateExcept.Excepts>
+								</local:ValidateExcept>
+							</local:MyTextBox.ValidateRules>
+						</local:MyTextBox>
+						<TextBlock
+							Grid.Row="4"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							Text="版本隔离"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：19-->
+						<local:MyComboBox
+							Name="ComboArgumentIndie"
+							Grid.Row="4"
+							Grid.ColumnSpan="2"
+							Tag="LaunchArgumentIndie"
+							Grid.Column="1">
+							<local:MyComboBoxItem
+								Content="关闭"
+								ToolTip="所有版本均使用同一档案，存档、Mod、资源包等均为公用。&#xA;若存在不同版本的 Forge，可能会由于 Mod 与版本冲突导致未知问题。" />
+							<local:MyComboBoxItem
+								Content="仅隔离可安装 Mod 的版本"
+								IsSelected="True"
+								ToolTip="每个 LiteLoader、Forge、Fabric 版本均互相独立以避免 Mod 冲突，未安装 Mod API 的其他版本则不会被隔离。" />
+							<local:MyComboBoxItem
+								Content="仅隔离非正式版"
+								ToolTip="将 Minecraft 快照、预发布版、远古版本、愚人节版本与其他版本进行隔离。" />
+							<local:MyComboBoxItem
+								Content="隔离非正式版与可安装 Mod 的版本" />
+							<local:MyComboBoxItem
+								Content="隔离所有版本"
+								ToolTip="不同版本之间的存档、Mod、资源包等均不互通。" />
+						</local:MyComboBox>
+						<TextBlock
+							VerticalAlignment="Center"
+							Grid.Row="6"
+							HorizontalAlignment="Left"
+							Text="启动器可见性"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：20-->
+						<local:MyComboBox
+							Name="ComboArgumentVisibie"
+							Grid.Row="6"
+							Grid.ColumnSpan="2"
+							Tag="LaunchArgumentVisible"
+							Grid.Column="1">
+							<local:MyComboBoxItem
+								Content="游戏启动后立即关闭" />
+							<local:MyComboBoxItem
+								Content=""
+								IsEnabled="False"
+								Visibility="Collapsed" />
+							<local:MyComboBoxItem
+								Content="游戏启动后隐藏，游戏退出后自动关闭" />
+							<local:MyComboBoxItem
+								Content="游戏启动后隐藏，游戏退出后重新打开" />
+							<local:MyComboBoxItem
+								Content="游戏启动后最小化" />
+							<local:MyComboBoxItem
+								Content="游戏启动后仍保持不变"
+								IsSelected="True" />
+						</local:MyComboBox>
+						<TextBlock
+							VerticalAlignment="Center"
+							Grid.Row="8"
+							HorizontalAlignment="Left"
+							Text="进程优先级"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：21-->
+						<local:MyComboBox
+							Name="ComboArgumentPriority"
+							Grid.Row="8"
+							Grid.ColumnSpan="2"
+							Tag="LaunchArgumentPriority"
+							Grid.Column="1">
+							<local:MyComboBoxItem
+								Content="高（优先保证游戏运行，游戏性能更佳，但可能造成其他程序卡顿）" />
+							<local:MyComboBoxItem
+								Content="中（平衡）"
+								IsSelected="True" />
+							<local:MyComboBoxItem
+								Content="低（优先保证其他程序运行，但可能让游戏卡顿，适合挂机时使用）" />
+						</local:MyComboBox>
+						<TextBlock
+							VerticalAlignment="Center"
+							Grid.Row="10"
+							HorizontalAlignment="Left"
+							Text="游戏窗口"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：22-->
+						<Grid
+							Name="PanArgumentWindow"
+							Row="10"
+							ColumnSpan="2"
+							Column="1">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<!--未知连接 ID：23-->
+							<local:MyComboBox
+								Name="ComboArgumentWindowType"
+								Tag="LaunchArgumentWindowType">
+								<local:MyComboBoxItem
+									Content="全屏" />
+								<local:MyComboBoxItem
+									Content="默认大小"
+									IsSelected="True"
+									ToolTip="以 854×480 的默认窗口大小启动 Minecraft"
+									ToolTipService.Placement="Right"
+									ToolTipService.HorizontalOffset="5"
+									ToolTipService.ShowDuration="2333333" />
+								<local:MyComboBoxItem
+									Content="与启动器窗口大小一致" />
+								<local:MyComboBoxItem
+									Content="自定义大小"
+									ToolTip="请注意 1.12.2 及更老的部分 Forge 存在 Bug，会导致高度设定无效"
+									ToolTipService.Placement="Right"
+									ToolTipService.HorizontalOffset="5"
+									ToolTipService.ShowDuration="2333333" />
+								<local:MyComboBoxItem
+									Content="最大化" />
+							</local:MyComboBox>
+							<!--未知连接 ID：24-->
+							<local:MyTextBox
+								Name="TextArgumentWindowWidth"
+								Padding="0,0,5,0"
+								Visibility="Collapsed"
+								Grid.Column="1"
+								Margin="50,0,0,0"
+								Tag="LaunchArgumentWindowWidth"
+								Width="60"
+								HorizontalContentAlignment="Center"
+								Text="854">
+								<local:MyTextBox.ValidateRules>
+									<local:ValidateInteger
+										Min="1"
+										Max="9999" />
+								</local:MyTextBox.ValidateRules>
+							</local:MyTextBox>
+							<!--未知连接 ID：25-->
+							<TextBlock
+								Name="LabArgumentWindowMiddle"
+								Visibility="Collapsed"
+								Grid.Column="2"
+								Text=" × "
+								VerticalAlignment="Center"
+								FontSize="18" />
+							<!--未知连接 ID：26-->
+							<local:MyTextBox
+								Name="TextArgumentWindowHeight"
+								Padding="0,0,5,0"
+								Visibility="Collapsed"
+								Grid.Column="3"
+								Width="60"
+								HorizontalContentAlignment="Center"
+								Tag="LaunchArgumentWindowHeight"
+								Text="480"
+								ToolTip="请注意 Forge 1.12.2 存在 Bug，会导致高度设定无效，其他版本无此问题"
+								ToolTipService.Placement="Right"
+								ToolTipService.HorizontalOffset="5"
+								ToolTipService.ShowDuration="2333333">
+								<local:MyTextBox.ValidateRules>
+									<local:ValidateInteger
+										Min="1"
+										Max="9999" />
+								</local:MyTextBox.ValidateRules>
+							</local:MyTextBox>
+						</Grid>
+						<TextBlock
+							VerticalAlignment="Center"
+							Grid.Row="12"
+							HorizontalAlignment="Left"
+							Text="游戏 Java"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：27-->
+						<local:MyComboBox
+							Name="ComboArgumentJava"
+							Grid.ColumnSpan="2"
+							Grid.Row="12"
+							Grid.Column="1"
+							ToolTip="若将 Java 放在游戏文件夹或 PCL 文件夹，在进行自动选择时 PCL2 会尽量优先选择它"
+							ToolTipService.ShowDuration="2333333">
+							<ComboBoxItem
+								Content="加载中……"
+								IsSelected="True" />
+						</local:MyComboBox>
+						<Grid
+							Row="13"
+							Column="1">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="Auto" />
+								<ColumnDefinition
+									Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<Path
+								Height="16"
+								HorizontalAlignment="Left"
+								Stretch="Uniform"
+								Margin="6,10.5,0,0"
+								Data="F1 M20,17 L43.25,17 L56,29.75 L56,40 L52,37.5 L52,34 L39,34 L39,21 L24,21 L24,55 L36,55 L32,59 L20,59 L20,17 M43,22.25 L43,30 L50.75,30 L43,22.25 M48,38 C53.5228,38 58,42.4772 58,48 C58,53.5229 53.5228,58 48,58 C46.1455,58 44.4089,57.4952 42.9201,56.6155 L36.1213,63.4142 C35.3403,64.1953 34.0739,64.1953 33.2929,63.4142 L32.5858,62.7071 C31.8047,61.9261 31.8047,60.6597 32.5858,59.8787 L39.3845,53.0799 C38.5048,51.5911 38,49.8545 38,48 C38,42.4772 42.4771,38 48,38 M48,42 C44.6863,42 42,44.6863 42,48 C42,51.3137 44.6863,54 48,54 C51.3137,54 54,51.3137 54,48 C54,44.6863 51.3137,42 48,42"
+								VerticalAlignment="Top"
+								Fill="{Binding Foreground, ElementName=BtnArgumentJavaSearch}" />
+							<!--未知连接 ID：28-->
+							<local:MyTextButton
+								Name="BtnArgumentJavaSearch"
+								HorizontalAlignment="Left"
+								Text="自动搜索"
+								Padding="25,10,5,5"
+								Grid.Row="5"
+								VerticalContentAlignment="Top" />
+							<Path
+								Height="16"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Left"
+								Stretch="Uniform"
+								Margin="22,10.5,0,0"
+								Grid.Column="1"
+								StrokeThickness="0.5"
+								Data="M827.4,589.1 L796.69999999999993,538.4 L796.69999999999993,151.3 C796.69999999999993,121.4 771.49999999999989,97.000000000000014 740.59999999999991,97.000000000000014 L213.59999999999991,97.000000000000014 C203.6999999999999,97.000000000000014 188.7999999999999,103.30000000000001 188.7999999999999,121.80000000000001 L188.7999999999999,822.3 C188.7999999999999,842.5 200.89999999999989,859.3 220.49999999999989,866.09999999999991 L389.59999999999991,924.69999999999993 C393.99999999999989,926.19999999999993 398.69999999999993,926.99999999999989 403.39999999999992,926.99999999999989 C413.59999999999991,926.99999999999989 424.09999999999991,923.59999999999991 433.2999999999999,916.99999999999989 C446.19999999999987,907.79999999999984 453.59999999999991,894.59999999999991 453.59999999999991,880.79999999999984 L453.49999999999989,864.19999999999982 L779.19999999999982,864.19999999999982 C810.0999999999998,864.19999999999982 835.29999999999984,839.89999999999986 835.29999999999984,809.89999999999986 L835.29999999999984,616.89999999999986 C835.29999999999984,607.09999999999991 832.5999999999998,597.49999999999989 827.39999999999986,589.09999999999991 M403.9,877.1 L238.29999999999998,822.30000000000007 L238.29999999999998,153.8 L439.79999999999995,205.20000000000002 L439.79999999999995,644.4 C439.69999999999993,644.9 438.99999999999994,647 436.59999999999997,649.69999999999993 L415.7,673.09999999999991 C408.09999999999997,681.49999999999989 404,691.8 404,701.99999999999989 L404,877.09999999999991 M785.7,810 C785.7,812.2 783.1,814.6 779.30000000000007,814.6 L453.30000000000007,814.6 L452.70000000000005,706.2 L473.6,682.80000000000007 C483.8,671.40000000000009 489.5,657.80000000000007 489.5,644.6 L489.5,205.2 C489.5,183.6 475.5,165.89999999999998 453.8,160.1 L403.40000000000003,146.7 L740.7,146.7 C744.5,146.7 747.1,149.1 747.1,151.29999999999998 L747.1,538.4 C747.1,548.1 749.80000000000007,557.8 755.1,566.3 L785.80000000000007,617 L785.80000000000007,810"
+								Stroke="{Binding Foreground, ElementName=BtnArgumentJavaSelect}"
+								Fill="{Binding Foreground, ElementName=BtnArgumentJavaSelect}" />
+							<!--未知连接 ID：29-->
+							<local:MyTextButton
+								Name="BtnArgumentJavaSelect"
+								Margin="17,0,0,0"
+								Padding="24.5,10,5,5"
+								Text="手动导入"
+								Grid.Row="5"
+								Grid.Column="1"
+								VerticalContentAlignment="Top"
+								HorizontalAlignment="Left" />
+						</Grid>
+					</Grid>
+				</StackPanel>
+			</local:MyCard>
+			<local:MyCard
+				Margin="0,0,0,15"
+				Title="游戏内存">
+				<StackPanel
+					Margin="25,40,25,15">
+					<!--未知连接 ID：30-->
+					<local:MyHint
+						Name="LabRamWarn"
+						CanClose="False"
+						Text="32 位 Java 最多只能分配 1 GB 内存，建议安装 64 位 Java!"
+						IsWarn="True"
+						Margin="0,0,0,12" />
+					<Grid
+						Margin="0,0,0,3">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="Auto" />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="Auto" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="Auto" />
+						</Grid.RowDefinitions>
+						<!--未知连接 ID：31-->
+						<local:MyRadioBox
+							Name="RadioRamType0"
+							Text="自动配置"
+							Width="110"
+							Checked="True"
+							Tag="LaunchRamType/0"
+							Margin="0,0,20,0"
+							ToolTip="根据安装的 Mod 量与电脑剩余内存动态调整为游戏分配的内存。" />
+						<!--未知连接 ID：32-->
+						<local:MyRadioBox
+							Name="RadioRamType1"
+							Row="2"
+							Text="自定义"
+							Tag="LaunchRamType/1"
+							Margin="0,0,20,0" />
+						<!--未知连接 ID：33-->
+						<local:MySlider
+							Name="SliderRamCustom"
+							Grid.Row="2"
+							Grid.Column="1"
+							IsEnabled="False"
+							Tag="LaunchRamCustom"
+							MaxValue="49"
+							Value="13" />
+					</Grid>
+					<!--未知连接 ID：34-->
+					<Grid
+						Name="PanRamDisplay"
+						Margin="0,11,2,0"
+						SnapsToDevicePixels="True"
+						Row="1"
+						ColumnSpan="2"
+						Column="1">
+						<Grid.ColumnDefinitions>
+							<!--未知连接 ID：35-->
+							<ColumnDefinition
+								Name="ColumnRamUsed"
+								Width="4.7*" />
+							<!--未知连接 ID：36-->
+							<ColumnDefinition
+								Name="ColumnRamGame"
+								Width="2.5*" />
+							<!--未知连接 ID：37-->
+							<ColumnDefinition
+								Name="ColumnRamEmpty"
+								Width="0.7*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition
+								Height="4" />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<!--未知连接 ID：38-->
+						<Rectangle
+							Name="RectRamUsed"
+							Grid.Row="1"
+							StrokeThickness="0">
+							<Shape.Fill>
+								<LinearGradientBrush
+									EndPoint="1,0.5"
+									StartPoint="0,0.5">
+									<GradientStop
+										Color="{DynamicResource ColorObject3}"
+										Offset="0" />
+									<GradientStop
+										Color="{DynamicResource ColorObject2}"
+										Offset="0.5" />
+								</LinearGradientBrush>
+							</Shape.Fill>
+						</Rectangle>
+						<!--未知连接 ID：39-->
+						<Rectangle
+							Name="RectRamGame"
+							Grid.Row="1"
+							StrokeThickness="0"
+							Grid.Column="1"
+							Fill="{DynamicResource ColorBrush3}"
+							Opacity="0.5" />
+						<!--未知连接 ID：40-->
+						<Rectangle
+							Name="RectRamEmpty"
+							Grid.Row="1"
+							StrokeThickness="0"
+							Grid.Column="2"
+							Fill="{DynamicResource ColorBrush6}"
+							Opacity="0.7" />
+						<!--未知连接 ID：41-->
+						<TextBlock
+							Name="LabRamUsedTitle"
+							Text="已使用内存"
+							Grid.ColumnSpan="3"
+							Opacity="0.7"
+							TextTrimming="None"
+							Margin="2,0,0,5"
+							FontSize="11"
+							HorizontalAlignment="Left" />
+						<!--未知连接 ID：42-->
+						<TextBlock
+							Name="LabRamGameTitle"
+							Text="游戏分配"
+							Opacity="0.7"
+							Grid.ColumnSpan="3"
+							TextTrimming="None"
+							Margin="2,0,0,5"
+							FontSize="11"
+							HorizontalAlignment="Left" />
+						<StackPanel
+							Grid.Row="2"
+							Orientation="Horizontal"
+							Grid.ColumnSpan="3"
+							Margin="2,3,0,0"
+							HorizontalAlignment="Left">
+							<!--未知连接 ID：43-->
+							<TextBlock
+								Name="LabRamUsed"
+								Text="4.7 GB"
+								FontSize="16"
+								Foreground="#FF000000"
+								TextTrimming="None" />
+							<!--未知连接 ID：44-->
+							<TextBlock
+								Name="LabRamTotal"
+								Text=" / 7.9 GB"
+								FontSize="16"
+								Foreground="#FF000000"
+								TextTrimming="None" />
+						</StackPanel>
+						<!--未知连接 ID：45-->
+						<TextBlock
+							Name="LabRamGame"
+							Grid.Row="2"
+							Text="2.5 GB"
+							Grid.ColumnSpan="3"
+							TextTrimming="None"
+							Margin="2,3,0,0"
+							FontSize="16"
+							Foreground="#FF000000"
+							HorizontalAlignment="Left" />
+					</Grid>
+				</StackPanel>
+			</local:MyCard>
+			<local:MyCard
+				Margin="0,0,0,15"
+				Title="高级设置"
+				IsSwaped="True"
+				CanSwap="True">
+				<StackPanel
+					Margin="25,40,25,15">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="Auto"
+								SharedSizeGroup="Name" />
+							<ColumnDefinition
+								Width="1*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="28" />
+							<RowDefinition
+								Height="9" />
+							<RowDefinition
+								Height="28" />
+						</Grid.RowDefinitions>
+						<TextBlock
+							Grid.Row="0"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							Text="JVM 参数"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：46-->
+						<local:MyTextBox
+							Name="TextAdvanceJvm"
+							Grid.Row="0"
+							Grid.ColumnSpan="2"
+							Tag="LaunchAdvanceJvm"
+							Grid.Column="1"
+							ToolTip="启动 Minecraft 时使用的额外 JVM 参数，在没有确定把握的情况下请不要尝试修改。&#xA;你可以通过点击左侧选项卡的初始化按钮来恢复到默认设置。"
+							ToolTipService.ShowDuration="2333333"
+							Text="-XX:+UseG1GC -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -Dfml.ignoreInvalidMinecraftCertificates=True -Dfml.ignorePatchDiscrepancies=True" />
+						<TextBlock
+							Grid.Row="2"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Left"
+							Text="额外参数"
+							Margin="0,0,25,0" />
+						<!--未知连接 ID：47-->
+						<local:MyTextBox
+							Name="TextAdvanceGame"
+							Grid.Row="2"
+							Grid.ColumnSpan="2"
+							Tag="LaunchAdvanceGame"
+							Grid.Column="1"
+							ToolTip="文本框中的内容将会被直接拼合在启动参数的末尾。&#xA;例如输入 --demo 则会以试玩模式启动游戏。"
+							ToolTipService.ShowDuration="2333333" />
+					</Grid>
+					<!--未知连接 ID：48-->
+					<local:MyCheckBox
+						Name="CheckAdvanceAssets"
+						Margin="0,10,0,4"
+						Text="关闭文件校验"
+						Tag="LaunchAdvanceAssets"
+						Column="1"
+						ToolTip="在启动 Minecraft 时，不校验 libraries 文件夹、第三方登录库与版本主 jar 文件，不更改 assets 文件夹。&#xA;如果你没有修改相关文件，请勿勾选此项。&#xA;更推荐在版本设置中关闭特定版本的校验，而不是在这里关闭所有版本的校验。"
+						ToolTipService.ShowDuration="2333333" />
+				</StackPanel>
+			</local:MyCard>
+		</StackPanel>
+	</local:MyScrollViewer>
+</AdornerDecorator>

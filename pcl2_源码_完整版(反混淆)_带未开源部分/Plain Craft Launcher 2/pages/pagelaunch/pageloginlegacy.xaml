@@ -1,0 +1,19 @@
+<Grid
+	x:Class="PCL.PageLoginLegacy" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:PCL"
+	Tag="True"
+	Margin="0,0,0,5">
+	<!--未知连接 ID：1-->
+	<local:MyComboBox
+		Name="ComboName"
+		Margin="0,84,0,0"
+		IsEditable="True"
+		Height="28"
+		IsTextSearchEnabled="False"
+		HintText="游戏用户名" />
+	<!--未知连接 ID：2-->
+	<local:MySkin
+		Name="Skin"
+		HorizontalAlignment="Center"
+		VerticalAlignment="Top"
+		HasCape="False" />
+</Grid>

@@ -1,0 +1,56 @@
+<Grid
+	x:Class="PCL.MyListItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Name="PanBack"
+	RenderTransformOrigin="0.5,0.5"
+	Background="{StaticResource ColorBrushSemiTransparent}"
+	Height="42" xmlns:pcl="clr-namespace:PCL">
+	<UIElement.RenderTransform>
+		<ScaleTransform
+			ScaleX="1"
+			ScaleY="1" />
+	</UIElement.RenderTransform>
+	<Grid.ColumnDefinitions>
+		<!--未知连接 ID：2-->
+		<ColumnDefinition
+			Name="ColumnCheck"
+			Width="2" />
+		<!--未知连接 ID：3-->
+		<ColumnDefinition
+			Name="ColumnPaddingLeft"
+			Width="0" />
+		<!--未知连接 ID：4-->
+		<ColumnDefinition
+			Name="ColumnLogo"
+			Width="4" />
+		<ColumnDefinition
+			Width="1*" />
+		<!--未知连接 ID：5-->
+		<ColumnDefinition
+			Name="ColumnPaddingRight"
+			Width="0" />
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+		<RowDefinition
+			Height="1*" />
+		<RowDefinition
+			Height="Auto" />
+		<RowDefinition
+			Height="Auto" />
+		<RowDefinition
+			Height="1*" />
+	</Grid.RowDefinitions>
+	<!--未知连接 ID：6-->
+	<TextBlock
+		Name="LabTitle"
+		Grid.Row="1"
+		SnapsToDevicePixels="False"
+		UseLayoutRounding="False"
+		HorizontalAlignment="Left"
+		IsHitTestVisible="False"
+		Grid.Column="3"
+		TextTrimming="CharacterEllipsis"
+		Margin="4,0,0,0"
+		Text="{Binding Title, ElementName=PanBack}"
+		FontSize="{Binding FontSize, ElementName=PanBack}"
+		Foreground="{Binding Foreground, ElementName=PanBack}" />
+</Grid>

@@ -1,0 +1,45 @@
+<Grid
+	x:Class="PCL.MyRadioBox" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Name="PanBack"
+	MinWidth="20"
+	UseLayoutRounding="False"
+	SnapsToDevicePixels="False"
+	MinHeight="20"
+	Background="{StaticResource ColorBrushSemiTransparent}"
+	Focusable="True" xmlns:pcl="clr-namespace:PCL"
+	FocusVisualStyle="{x:Null}">
+	<!--未知连接 ID：2-->
+	<TextBlock
+		Name="LabText"
+		IsHitTestVisible="False"
+		FontSize="13"
+		Padding="0"
+		Margin="26,0,0,0"
+		Text="Radiobox"
+		Foreground="{DynamicResource ColorBrush1}"
+		HorizontalAlignment="Left"
+		VerticalAlignment="Center" />
+	<!--未知连接 ID：3-->
+	<Ellipse
+		Name="ShapeBorder"
+		IsHitTestVisible="False"
+		StrokeThickness="1.1"
+		HorizontalAlignment="Left"
+		VerticalAlignment="Center"
+		Width="18"
+		Height="18"
+		Stroke="{DynamicResource ColorBrush1}"
+		Margin="1,0,0,0"
+		Fill="{StaticResource ColorBrushHalfWhite}" />
+	<!--未知连接 ID：4-->
+	<Ellipse
+		Name="ShapeDot"
+		IsHitTestVisible="False"
+		HorizontalAlignment="Left"
+		VerticalAlignment="Center"
+		Width="0"
+		Height="0"
+		Margin="10,0,0,0"
+		StrokeThickness="0"
+		Fill="{Binding Stroke, ElementName=ShapeBorder}" />
+</Grid>

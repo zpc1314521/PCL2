@@ -1,0 +1,43 @@
+<AdornerDecorator
+	x:Class="PCL.PageOtherHelpDetail" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:PCL">
+	<!--未知连接 ID：1-->
+	<local:MyScrollViewer
+		Name="PanBack"
+		VerticalScrollBarVisibility="Auto"
+		HorizontalScrollBarVisibility="Disabled">
+		<!--未知连接 ID：2-->
+		<StackPanel
+			Name="PanCustom"
+			Margin="25,25,25,10">
+			<FrameworkElement.Resources>
+				<ResourceDictionary>
+					<Style
+						TargetType="{x:Type TextBlock}"
+						BasedOn="{StaticResource BasedOnTextBlock}"
+						x:Key="{x:Type TextBlock}">
+						<Setter
+							Property="TextWrapping"
+							Value="Wrap" />
+					</Style>
+					<Style
+						TargetType="{x:Type local:MyCard}"
+						x:Key="{x:Type local:MyCard}">
+						<Setter
+							Property="Margin"
+							Value="0,0,0,15" />
+					</Style>
+					<Style
+						TargetType="{x:Type Image}"
+						x:Key="{x:Type Image}">
+						<Setter
+							Property="RenderOptions.BitmapScalingMode"
+							Value="HighQuality" />
+						<Setter
+							Property="HorizontalAlignment"
+							Value="Center" />
+					</Style>
+				</ResourceDictionary>
+			</FrameworkElement.Resources>
+		</StackPanel>
+	</local:MyScrollViewer>
+</AdornerDecorator>

@@ -1,0 +1,30 @@
+<StackPanel
+	x:Class="PCL.PageLoginMs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:PCL"
+	Tag="False"
+	Orientation="Vertical"
+	Margin="0,0,0,-2">
+	<!--未知连接 ID：1-->
+	<StackPanel
+		Name="PanEmpty">
+		<Path
+			Data="M535.94,571.76 L827,572.12 L827,858.14 L535.94,818.9 L535.94,571.76 M499.94,535.76 L499.94,850.4 L863,899.36 L863,536.3 L499.94,535.76 M197,571.4 L415.52,571.76 L415.52,798.74 L196.99999999999997,768.32 L196.99999999999997,571.40000000000009 M161,535.4 L161,799.81999999999994 L451.52,840.14 L451.52,535.94 L161,535.40000000000009 M827,166.76 L827,451.88 L535.94,451.52 L535.94,211.76 L827,166.76 M863,124.64 L499.94,180.8 L499.94,487.34000000000003 L863,487.88000000000005 L863,124.64000000000004 M415.52,231.2 L415.52,451.15999999999997 L196.99999999999997,450.97999999999996 L196.99999999999997,261.61999999999995 L415.52,231.19999999999993 M451.52,189.8 L161,230.3 L161,486.98 L451.52,487.34000000000003 L451.52,189.8"
+			Fill="{DynamicResource ColorBrush1}"
+			Opacity="0.7"
+			Width="40"
+			Stretch="Uniform" />
+		<TextBlock
+			Text="　　　 无账号信息&#xA;点击 添加账号 按钮以登录"
+			HorizontalAlignment="Center"
+			Margin="0,15,0,25"
+			Foreground="{DynamicResource ColorBrush1}"
+			Opacity="0.7" />
+		<!--未知连接 ID：2-->
+		<local:MyButton
+			Name="BtnLogin"
+			Text="添加账号"
+			ColorType="Highlight"
+			Height="35"
+			HorizontalAlignment="Center"
+			Width="150" />
+	</StackPanel>
+</StackPanel>

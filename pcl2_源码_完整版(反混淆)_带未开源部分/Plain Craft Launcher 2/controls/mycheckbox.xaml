@@ -1,0 +1,54 @@
+<Grid
+	x:Class="PCL.MyCheckBox" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	Name="PanBack"
+	MinWidth="20"
+	UseLayoutRounding="False"
+	SnapsToDevicePixels="False"
+	MinHeight="20"
+	Background="{StaticResource ColorBrushSemiTransparent}"
+	Focusable="True" xmlns:pcl="clr-namespace:PCL"
+	FocusVisualStyle="{x:Null}">
+	<!--未知连接 ID：2-->
+	<TextBlock
+		Name="LabText"
+		IsHitTestVisible="False"
+		FontSize="13"
+		Padding="0"
+		Margin="26,0,0,0"
+		Text="Checkbox"
+		Foreground="{DynamicResource ColorBrush1}"
+		HorizontalAlignment="Left"
+		VerticalAlignment="Center" />
+	<!--未知连接 ID：3-->
+	<Border
+		Name="ShapeBorder"
+		IsHitTestVisible="False"
+		BorderThickness="1.1"
+		HorizontalAlignment="Left"
+		VerticalAlignment="Center"
+		Width="18"
+		Height="18"
+		BorderBrush="{DynamicResource ColorBrush1}"
+		CornerRadius="3"
+		Margin="1,0,0,0"
+		Background="{StaticResource ColorBrushHalfWhite}" />
+	<!--未知连接 ID：4-->
+	<Path
+		Name="ShapeCheck"
+		IsHitTestVisible="False"
+		HorizontalAlignment="Left"
+		VerticalAlignment="Center"
+		Width="12"
+		Height="12"
+		Margin="4,0,0,0"
+		Data="M0,6 L1.5,4.5 L4.5,7.5 L10.5,1.5 L12,3 L4.5,10.5 L0,6"
+		Fill="{Binding BorderBrush, ElementName=ShapeBorder}">
+		<UIElement.RenderTransform>
+			<ScaleTransform
+				CenterX="6"
+				CenterY="6"
+				ScaleX="0"
+				ScaleY="0" />
+		</UIElement.RenderTransform>
+	</Path>
+</Grid>

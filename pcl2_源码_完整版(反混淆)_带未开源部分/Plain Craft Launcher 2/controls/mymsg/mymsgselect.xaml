@@ -1,0 +1,119 @@
+<Grid
+	x:Class="PCL.MyMsgSelect" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:my="clr-namespace:PCL"
+	Name="PanBack"
+	UseLayoutRounding="True"
+	SnapsToDevicePixels="True"
+	MinWidth="450"
+	HorizontalAlignment="Center"
+	VerticalAlignment="Center"
+	Margin="20">
+	<Grid.RowDefinitions>
+		<RowDefinition
+			Height="Auto" />
+		<RowDefinition
+			Height="Auto" />
+		<RowDefinition
+			Height="1*" />
+		<RowDefinition
+			Height="Auto" />
+	</Grid.RowDefinitions>
+	<!--未知连接 ID：2-->
+	<Border
+		Name="PanBorder"
+		Grid.RowSpan="99"
+		Background="#00FBFBFB"
+		CornerRadius="5"
+		Width="{Binding ActualWidth, ElementName=PanBack, Mode=OneWay}"
+		Height="{Binding ActualHeight, ElementName=PanBack, Mode=OneWay}">
+		<UIElement.Effect>
+			<!--未知连接 ID：3-->
+			<DropShadowEffect
+				Color="{DynamicResource ColorObject1}"
+				BlurRadius="15"
+				ShadowDepth="0"
+				Opacity="0"
+				x:Name="EffectShadow" />
+		</UIElement.Effect>
+	</Border>
+	<!--未知连接 ID：4-->
+	<TextBlock
+		Name="LabTitle"
+		FontSize="23"
+		TextTrimming="None"
+		Foreground="{DynamicResource ColorBrush2}"
+		HorizontalAlignment="Left"
+		Margin="28,19,28,0"
+		Text="测试标题文本"
+		VerticalAlignment="Top"
+		SnapsToDevicePixels="False"
+		UseLayoutRounding="False" />
+	<!--未知连接 ID：5-->
+	<Rectangle
+		Name="ShapeLine"
+		Height="2"
+		Grid.Row="1"
+		Fill="{DynamicResource ColorBrush2}"
+		Margin="20,9,20,13"
+		Opacity="0" />
+	<!--未知连接 ID：6-->
+	<my:MyScrollViewer
+		Name="PanCaption"
+		Grid.Row="2"
+		Margin="19,0,19,20"
+		Padding="9,0"
+		VerticalScrollBarVisibility="Auto"
+		HorizontalScrollBarVisibility="Disabled"
+		SnapsToDevicePixels="True"
+		UseLayoutRounding="True"
+		DeltaMuity="0.5">
+		<!--未知连接 ID：7-->
+		<StackPanel
+			Name="PanSelection"
+			Orientation="Vertical" />
+	</my:MyScrollViewer>
+	<!--未知连接 ID：8-->
+	<StackPanel
+		Name="PanBtn"
+		Grid.Row="3"
+		VerticalAlignment="Top"
+		HorizontalAlignment="Right"
+		Margin="150,0,22,20"
+		Orientation="Horizontal">
+		<!--未知连接 ID：9-->
+		<my:MyButton
+			Name="Btn1"
+			ColorType="Normal"
+			Text="测试按钮1"
+			Margin="15,0,0,0"
+			TextPadding="7"
+			SnapsToDevicePixels="False"
+			Padding="5,0"
+			Opacity="0"
+			UseLayoutRounding="False"
+			IsEnabled="False" />
+		<!--未知连接 ID：10-->
+		<my:MyButton
+			Name="Btn2"
+			ColorType="Normal"
+			Text="测试按钮2"
+			Margin="15,0,0,0"
+			TextPadding="7"
+			Visibility="Visible"
+			SnapsToDevicePixels="False"
+			Padding="5,0"
+			Opacity="0"
+			UseLayoutRounding="False" />
+		<!--未知连接 ID：11-->
+		<my:MyButton
+			Name="Btn3"
+			ColorType="Normal"
+			Text="测试按钮3"
+			TextPadding="7"
+			Margin="15,0,0,0"
+			Visibility="Visible"
+			SnapsToDevicePixels="False"
+			Padding="5,0"
+			Opacity="0"
+			UseLayoutRounding="False" />
+	</StackPanel>
+</Grid>
